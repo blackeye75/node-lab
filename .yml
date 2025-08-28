@@ -1,0 +1,38 @@
+#1
+
+const URI=process.env.MONGODB_URL;
+mongoose.connect(URI,{
+    // useCreateIndex:true,
+    // useFindAndModify:false,
+    // useNewUrlParser:true,
+    // useUnifiedTopology:true,
+}).then(()=>{
+    console.log("MongoDb Connected");
+}).catch(err=>{
+    console.log(err);
+})
+
+#2 
+
+export const connectDB = async () => {
+    try {
+       const res= await mongoose.connect(process.env.MONGO_URI);
+        console.log(`MongoDB connected: ${res.connection.host}`);
+        
+    } catch (error) {
+        console.log(`Error error in connecting MongoDB: ${error.message}`);
+        process.exit(1); // Exit the process with failure
+    }
+}
+
+#3
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log('MongoDB connected');
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
+};
