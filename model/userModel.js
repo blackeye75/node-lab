@@ -10,9 +10,9 @@ const userSchema = mongoose.Schema({
       type: String,
       required: true
     },
-    madienname: {
+    maidenname: {
       type: String,
-      required: true
+      // required: true
     }
   },
   address: {
@@ -39,4 +39,4 @@ const userSchema = mongoose.Schema({
   }
 })
 
-export default User = mongoose.model("User", userSchema);
+export const User = mongoose.model("User", userSchema);

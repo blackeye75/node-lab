@@ -38,3 +38,5 @@ const connectDB = async () => {
 };
 
 'https://dummyjson.com/users/1'
+
+https://dummyjson.com/users?limit=5   api for 5 user array of object
