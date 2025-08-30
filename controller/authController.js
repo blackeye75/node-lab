@@ -53,8 +53,7 @@ export async function fetchFromApi(req, res) {
 }
 
 export async function searchuser(req,res) {
-  // const {name} = req.query;
-  const {name} = req.params;
-
-  
+  const {name} = req.query;
+  const document = await User.findOne({"name.firstname" : name })
+  return res.status(400).json(document)
 }

@@ -6,7 +6,7 @@ const authRouter = express.Router();
 
 authRouter.post("/login",loginController)
 authRouter.post("/fetch",authMiddleware,fetchFromApi)
-authRouter.post("/searchuser/:name",authMiddleware,searchuser)
+authRouter.post("/searchuser",authMiddleware,searchuser)
 
 
 export default authRouter
