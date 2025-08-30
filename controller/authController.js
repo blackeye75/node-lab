@@ -10,7 +10,7 @@ function generateToken(payload) {
 
 export async function loginController(req, res) {
   const { name } = req.body;
-  console.log('loginController name:', name);
+  // console.log('loginController name:', name);
 
   if (!name) return res.status(400).json({ message: 'name is required' });
 
@@ -50,4 +50,11 @@ export async function fetchFromApi(req, res) {
     console.error('fetchFromApi error:', err);
     return res.status(500).json({ message: 'Failed to fetch or insert users', error: err.message });
   }
+}
+
+export async function searchuser(req,res) {
+  // const {name} = req.query;
+  const {name} = req.params;
+
+  
 }
